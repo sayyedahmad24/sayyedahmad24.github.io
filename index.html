@@ -46,12 +46,10 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-        <img src="img/cat-small.jpg" alt="foto" width="150" class="rounded-circle img-thumbnail shadow"
-            data-aos="fade-out">
+        <img src="img/cat-small.jpg" alt="foto" width="150" class="rounded-circle img-thumbnail shadow">
 
         <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-            featured content or information.</p>
+        <p class="lead"></p>
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#fff" fill-opacity="1"
@@ -288,6 +286,36 @@
         AOS.init({
             once: true
         });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/TextPlugin.min.js"></script>
+    <script>
+        //list as many as you'd like
+        gsap.registerPlugin(TextPlugin);
+        gsap.to('.lead', {
+            duration: 2.5,
+            delay: 1.5, 
+            text: "This is a simple hero unit"
+        })
+        gsap.from('.jumbotron img', {
+            duration: 1,
+            rotateY: 360,
+            opacity: 0,
+        });
+        gsap.from('.navbar', {
+            duration: 1.5,
+            y: "-100%",
+            opacity: 0,
+            ease: 'bounce'
+        });
+        gsap.from('.display-4', {
+            duration: 1.5,
+            x: -50,
+            opacity: 0,
+            delay: .5,
+            ease: 'back'
+        })
     </script>
 
     <script>
