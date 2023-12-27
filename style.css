@@ -7,6 +7,10 @@
     background-color: lightblue;
 }
 
+#gear {
+    background-color: lightblue;
+}
+
 section {
     padding-top: 5rem;
 }
@@ -15,6 +19,99 @@ section {
     width: 100%;
 }
 
-#gallery .row > * {
-padding: 0;
+#gallery .row>* {
+    padding: 0;
+}
+
+.gallery {
+    padding-bottom: 2rem;
+}
+
+.gear-box {
+    position: relative;
+    background-color: #0c6efd;
+    border-radius: 10px;
+    height: 500px;
+    /* overflow: hidden; */
+    transform-style: preserve-3d;
+}
+
+.gear-box::before {
+    content: "My";
+    position: absolute;
+    color: white;
+    font-size: 5em;
+    font-weight: bold;
+    font-style: italic;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: .5s;
+}
+
+.gear-box:hover::before {
+    opacity: .2;
+}
+
+.gear-box::after {
+    content: "Gear";
+    position: absolute;
+    color: white;
+    font-size: 4em;
+    font-weight: bold;
+    font-style: italic;
+    top: 350px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: .5s;
+}
+
+.gear-box:hover::after {
+    opacity: .2;
+}
+
+.gear-name {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    opacity: 0;
+    transition: .5s;
+    transform: translate3d(0,0,50px);
+}
+
+.gear-box:hover .gear-name {
+    top: 20px;
+    opacity: 1;
+}
+
+.gear-detail-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 100px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.gear-box:hover .gear-detail-btn {
+    bottom: 20px;
+    opacity: 1;
+}
+
+.gear-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -45%, 80px);
+    max-width: 325px;
+    transition: .5s;
+}
+
+.gear-box:hover .gear-img {
+    transform: translate3d(-50%, -45%, 80px) rotate(-15deg) scale(1.2);
 }
