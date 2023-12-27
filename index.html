@@ -11,6 +11,9 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My Css -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -32,6 +35,7 @@
                     <a class="nav-link active" aria-current="page" href="#home">Home</a>
                     <a class="nav-link" href="#about">About</a>
                     <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="#gallery">Gallery</a>
                     <a class="nav-link " href="#contact">Contact</a>
                 </div>
             </div>
@@ -42,7 +46,8 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-        <img src="img/cat-small.jpg" alt="foto" width="150" class="rounded-circle img-thumbnail shadow">
+        <img src="img/cat-small.jpg" alt="foto" width="150" class="rounded-circle img-thumbnail shadow"
+            data-aos="fade-out">
 
         <h1 class="display-4">Hello, world!</h1>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
@@ -66,11 +71,11 @@
                 </div>
 
                 <div class="row justify-content-center fs-5 mt-4">
-                    <div class="col-md-5">
+                    <div class="col-md-5" data-aos="fade-right" data-aos-duration="1000">
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam quas dolorem fugit, sequi
                             illum ipsa. Odit explicabo distinctio cum aliquam!</p>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam quo officiis alias laboriosam,
                             deserunt ratione. Sint consectetur nisi iste inventore reiciendis quaerat, quam laudantium
                             dolore?</p>
@@ -100,7 +105,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-sm-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="flip-left" data-aos-duration="500">
                         <img src="img/1.jpg" class="card-img-top" alt="foto1">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -109,7 +114,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="100">
                         <img src="img/2.jpg" class="card-img-top" alt="foto2">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -118,7 +123,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200">
                         <img src="img/3.jpg" class="card-img-top" alt="foto3">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -127,7 +132,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="300">
                         <img src="img/4.jpg" class="card-img-top" alt="foto2">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -136,7 +141,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400">
                         <img src="img/5.jpg" class="card-img-top" alt="foto3">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -155,6 +160,61 @@
         </svg>
     </section>
     <!-- Akhir Projects -->
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="container">
+
+            <div class="row text-center mb-3">
+                <div class="col">
+                    <h2>Gallery</h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <a href=""><img src="img/1.jpg" alt="Gallery 1" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/2.jpg" alt="Gallery 2" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/3.jpg" alt="Gallery 3" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/4.jpg" alt="Gallery 4" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/5.jpg" alt="Gallery 5" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/1.jpg" alt="Gallery 6" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/2.jpg" alt="Gallery 7" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/3.jpg" alt="Gallery 8" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/4.jpg" alt="Gallery 9" class="img-fluid gallery-img"></a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href=""><img src="img/5.jpg" alt="Gallery 10" class="img-fluid gallery-img"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Akhir Gallery -->
 
     <!-- Contact -->
     <section id="contact">
@@ -214,6 +274,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        const galleryImage = document.querySelectorAll('.gallery-img');
+
+        galleryImage.forEach((img, i) => {
+            img.dataset.aos = 'fade-down';
+            img.dataset.aosDelay = i * 100
+            img.dataset.aosDuration = 1000
+        });
+
+        AOS.init({
+            once: true
+        });
+    </script>
 
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw_SdlSSageE3nC6MI4s33Iq8T7giZpoovb__mSo7EGHaDkKJiW_NzIZ0NAmy72FZdH/exec'
