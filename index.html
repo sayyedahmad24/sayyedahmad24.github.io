@@ -168,21 +168,30 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form>
+                    <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                        <strong>Terima Kasih!</strong> Pesan anda sudah kami terima.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <form name="contact-form">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name">
+                            <label for="nama" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="nama" name="nama">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="mb-3">
-                            <label for="comment">Comments</label>
-                            <textarea class="form-control" placeholder="Leave a comment here" id="comment"></textarea>
+                            <label for="pesan">Comments</label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="pesan"
+                                name="pesan"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-kirim">Submit</button>
+                        <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                            <span role="status">Loading...</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -205,6 +214,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw_SdlSSageE3nC6MI4s33Iq8T7giZpoovb__mSo7EGHaDkKJiW_NzIZ0NAmy72FZdH/exec'
+        const form = document.forms['contact-form']
+        const btnKirim = document.querySelector('.btn-kirim')
+        const btnLoading = document.querySelector('.btn-loading')
+        const myAlert = document.querySelector('.alert')
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            // ketika tombol submit diklik
+            // tampilkan tombol loading, hilangkan tombol kirim
+            btnLoading.classList.toggle('d-none')
+            btnKirim.classList.toggle('d-none')
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    // tampilkan tombol kirim, hilangkan tombol loading
+                    btnLoading.classList.toggle('d-none')
+                    btnKirim.classList.toggle('d-none')
+                    // tampilkan alert
+                    myAlert.classList.toggle('d-none')
+                    // reset form
+                    form.reset()
+                    console.log('Success!', response)
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 
 </html>
